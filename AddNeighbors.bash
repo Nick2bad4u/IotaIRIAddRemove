@@ -53,13 +53,19 @@ fi
 
 #add to config
 
-sed -i "14s|$| $server|" /home/iota/node/iota.ini
+sed -i "/NEIGHBORS/s|$| $server|" /home/iota/node/iota.ini
 
 echo Adding $server in the config file...
 
 echo $server has been added forever!
 
-echo done.
+#start nelson in pm2
+
+echo Starting nelson...
+
+sudo pm2 start nelson
+
+echo Nelson started...
 
 #ask to view config
 
@@ -78,13 +84,5 @@ fi
 #show config
 
 cat /home/iota/node/iota.ini
-
-#start nelson in pm2
-
-echo Starting nelson...
-
-sudo pm2 start nelson
-
-echo Nelson started...
 
 #end
