@@ -53,13 +53,19 @@ fi
 
 #delete from config
 
-sed -i "s/ $server\>//g" /home/iota/node/iota.ini
+sed -i "s| $server||g" /home/iota/node/iota.ini
 
 echo Removing $server in the config file...
 
 echo $server has been removed forever!
 
-echo done.
+#start nelson in pm2
+
+echo Starting nelson...
+
+sudo pm2 start nelson
+
+echo Nelson started...
 
 #ask to view config
 
@@ -78,13 +84,5 @@ fi
 #show config
 
 cat /home/iota/node/iota.ini
-
-#start nelson in pm2
-
-echo Starting nelson...
-
-sudo pm2 start nelson
-
-echo Nelson started...
 
 #end
