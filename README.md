@@ -14,9 +14,7 @@ Lets you Verify the config
 Restarts Nelson via PM2
 
 
-For this to work correctly you need to change the location to the location of your IRI config.
-
-You also need to make sure your "NEIGHBORS =" line is on line 14.
+For this to work correctly you need to change the location of `"/home/iota/node/iota.ini"` to the location of your IRI config.
 
 Thanks!
 
